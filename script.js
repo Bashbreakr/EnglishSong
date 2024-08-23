@@ -1,14 +1,35 @@
-const verses = [
-    "First verse of your song",
-    "Second verse of your song",
-    // Add more verses as needed
+const video = document.getElementById('video');
+const verses = document.querySelectorAll('.verse');
+
+// Define an array of video sources and corresponding times (start, end) for each verse
+const verseData = [
+    { src: 'verse1.mp4', startTime: 0, endTime: 10 },
+    { src: 'verse2.mp4', startTime: 10, endTime: 20 },
+    { src: 'verse3.mp4', startTime: 20, endTime: 30 },
 ];
 
-let currentVerse = 0;
+let currentVerseIndex = 0;
 
-function displayVerse() {
-    document.getElementById('verse').innerText = verses[currentVerse];
-    currentVerse = (currentVerse + 1) % verses.length;
+function updateVerseHighlight() {
+    verses.forEach((verse, index) => {
+        verse.classList.toggle('highlighted', index === currentVerseIndex);
+    });
 }
 
-setInterval(displayVerse, 5000); // Change verse every 5 seconds
+function changeVideoSource() {
+    video.src = verseData[currentVerseIndex].src;
+    video.currentTime = verseData[currentVerseIndex].startTime;
+    video.play();
+}
+
+video.addEventListener('timeupdate', () => {
+    const currentTime = video.currentTime;
+    if (currentTime >= verseData[currentVerseIndex].endTime) {
+        currentVerseIndex = (currentVerseIndex + 1) % verseData.length;
+        changeVideoSource();
+        updateVerseHighlight();
+    }
+});
+
+changeVideoSource();
+updateVerseHighlight();
