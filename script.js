@@ -3,7 +3,7 @@ const verses = document.querySelectorAll('.verse');
 
 // Define an array of video sources and corresponding times (start, end) for each verse
 const verseData = [
-    { src: 'verse1.mp4', startTime: 0, endTime: 10 },
+    { src: 'pixverse%2Fmp4%2Fmedia%2F5404e598-056b-4440-be9a-605df9a6a0e3_seed1017060603.mp4', startTime: 0, endTime: 10 },
     { src: 'verse2.mp4', startTime: 10, endTime: 20 },
     { src: 'verse3.mp4', startTime: 20, endTime: 30 },
 ];
