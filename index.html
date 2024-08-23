@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Lyrics and Video</title>
-    <link rel="stylesheet" href="stylesheet_INDEX.css">
+    <title>Song Verse Highlighter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="lyrics">
-            <p id="verse">
-You are something in our Hearts
-worth fighting for
-Embracing all Mankind
-Across the universe
-Youre Borders can’t be taken down
-It’s a symphony of Marklohes steel
-            </p>
-        </div>
-        <div class="video">
-            <video id="video" width="100%" controls autoplay loop muted>
-                <source src="your-video-file.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <video id="video" autoplay loop muted></video>
+        <div id="verses">
+            <p id="verse1" class="verse">Verse 1 lyrics go here...</p>
+            <p id="verse2" class="verse">Verse 2 lyrics go here...</p>
+            <p id="verse3" class="verse">Verse 3 lyrics go here...</p>
         </div>
     </div>
     <script src="script.js"></script>
