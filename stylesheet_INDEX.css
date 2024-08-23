@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.lyrics {
+    width: 45%;
+}
+.video {
+    width: 45%;
+}
